@@ -2,7 +2,7 @@
 
 ## General Informations
 - 3 nodes recommended to avoid "split brain!"
-- sst method rsync or mariadbbackup recommended, mysqldump is to slow
+- sst method rsync or mariadbbackup recommended, mysqldump is too slow
 - galera package required  
 - galera plugin-in (libgalera_smm.so) required (already included from mariadb 10.1) 
  
