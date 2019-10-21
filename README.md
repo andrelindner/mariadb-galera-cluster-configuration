@@ -51,3 +51,8 @@ Bootstrap the first node, it's also required after a cluster restart with one of
   
 Now, you can start the other 2 nodes.  
 **systemctl start mysql**    
+  
+## Support (NOT REQUIRED!)
+**BTC:** 3KC43T8Z1WG9zo6B671Yt5YhKgxbUwtGG2  
+**Paypal:** https://www.paypal.me/lindnerandre  
+**If you want to support me or just check the spelling :-P**
