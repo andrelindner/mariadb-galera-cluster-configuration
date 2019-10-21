@@ -1,0 +1,24 @@
+[mysqld]
+# InnoDB ist required
+default_storage_engine=InnoDB
+binlog_format=ROW
+innodb_autoinc_lock_mode=2
+innodb_flush_log_at_trx_commit=0
+query_cache_size=0
+query_cache_type=0
+
+# Galera configuration
+wsrep_on=ON
+# Ubuntu
+wsrep_provider=/usr/lib/galera/libgalera_smm.so
+# wsrep_cluster_address="gcomm://192.168.1.10,192.168.1.11,192.168.1.12"
+wsrep_cluster_address="gcomm://<node_1_ip>,<node_2_ip>,<node_3_ip>"
+# Choose a name for your cluster, must be the same in every node configuration file
+wsrep_cluster_name='Galera Cluster'
+# Choose a name for this node
+wsrep_node_name='Node 2'
+
+# rsync replication method
+wsrep_sst_method=rsync
+# user credentials for the replication
+wsrep_sst_auth=galerasync:secret
