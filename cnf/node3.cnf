@@ -16,7 +16,7 @@ wsrep_cluster_address="gcomm://<node_1_ip>,<node_2_ip>,<node_3_ip>"
 # Choose a name for your cluster, must be the same in every node configuration file
 wsrep_cluster_name='Galera Cluster'
 # Choose a name for this node
-wsrep_node_name='Node 2'
+wsrep_node_name='Node 3'
 
 # rsync replication method
 wsrep_sst_method=rsync
