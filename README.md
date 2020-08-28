@@ -16,11 +16,11 @@
   
 - **Example:**   
   CREATE USER 'galerasync'@'192.168.1.10' IDENTIFIED BY 'secret';  
-  GRAND ALL PRIVILIGES ON *.* TO 'galerasymc'@'192.168.1.10';  
+  GRANT ALL PRIVILIGES ON *.* TO 'galerasymc'@'192.168.1.10';  
   CREATE USER 'galerasync'@'192.168.1.11' IDENTIFIED BY 'secret';  
-  GRAND ALL PRIVILIGES ON *.* TO 'galerasymc'@'192.168.1.11';  
+  GRANT ALL PRIVILIGES ON *.* TO 'galerasymc'@'192.168.1.11';  
   CREATE USER 'galerasync'@'localhost' IDENTIFIED BY 'secret';  
-  GRAND ALL PRIVILIGES ON *.* TO 'galerasymc'@'localhost';    
+  GRANT ALL PRIVILIGES ON *.* TO 'galerasymc'@'localhost'; 
   
 ## my.cnf basic configuration for galera   
 - **InnoDB** is required  
