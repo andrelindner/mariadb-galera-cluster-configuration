@@ -1,32 +1,32 @@
-# MariaDB Galera Cluster - Configuration  
+# MariaDB Galera Cluster - Konfiguration  
 
-## General Informations
-- 3 nodes recommended to avoid "split brain!"
-- sst method rsync or mariadbbackup recommended, mysqldump is too slow
-- galera package required  
-- galera plugin-in (libgalera_smm.so) required (already included from mariadb 10.1) 
+## Allgemeine Informationen
+- Mindestens 3 Knoten sind erforderlich"split brain!"
+- sst method rsync oder mariadbbackup ist aus Performance Gründen zu empfehlen
+- Galera Paket ist erforderlich, sollte im Standard jedoch bereits mit MariaDB installiert sein
+- Galera Plugin-in (libgalera_smm.so) erforderlich (bereits bei mariadb 10.1 enthalten) 
+- Nur InnoDB wird unterstützt
  
-## Install packages (Ubuntu)  
+## Pakete installieren (Ubuntu)  
 - sudo apt-get update  
 - sudo apt-get install mariadb-server  
 - sudo apt-get install galera 
   
-## Create user for sst-sync on every node
-- You habe to create mariadb/mysql users on every cluster node for the other nodes. Use the same name on every node. Please change the IP-Address for every cluster node.  
+## MySQL/MariaDB Benutzer für sst-sync erstellen
+- Auf den einzelnen Knoten sind Benutzer für den Sync-Prozess anzulegen. Die IP-Adresse der jeweiligen Knoten muss in dem Codebeispiel angepasst werden.   
   
-- **Example:**   
-  CREATE USER 'galerasync'@'192.168.1.10' IDENTIFIED BY 'secret';  
-  GRAND ALL PRIVILIGES ON *.* TO 'galerasymc'@'192.168.1.10';  
-  CREATE USER 'galerasync'@'192.168.1.11' IDENTIFIED BY 'secret';  
-  GRAND ALL PRIVILIGES ON *.* TO 'galerasymc'@'192.168.1.11';  
-  CREATE USER 'galerasync'@'localhost' IDENTIFIED BY 'secret';  
-  GRAND ALL PRIVILIGES ON *.* TO 'galerasymc'@'localhost'; 
+- **Beispiel:**   
+  CREATE USER 'galerasync'@'192.168.1.10' IDENTIFIED BY '<PASSWORT>';  
+  GRAND ALL PRIVILIGES ON *.* TO 'galerasync'@'192.168.1.10';  
+  CREATE USER 'galerasync'@'192.168.1.11' IDENTIFIED BY '<PASSWORT>';  
+  GRAND ALL PRIVILIGES ON *.* TO 'galerasync'@'192.168.1.11';  
+  CREATE USER 'galerasync'@'localhost' IDENTIFIED BY '<PASSWORT>';  
+  GRAND ALL PRIVILIGES ON *.* TO 'galerasync'@'localhost'; 
   
-## my.cnf basic configuration for galera   
-- **InnoDB** is required  
-- **Cluster name** must be the **same** on every node (my.cnf)  
-- take care, only the required user should be able to open your configuration file  
-- the **configuration file includes credentials**  
+## my.cnf Basis Konfiguration   
+- **InnoDB** ist Pflicht
+- **Cluster name** muss auf allen Knoten der gleiche sein (my.cnf)  
+- Es sollte sich gestellt werden, dass lediglich die benötigten Benutzer Zugriff auf die Konfigurations-Datei haben.  **Die Konfigurationsdatei enthält Zugangsdaten.**    
   
 **[mysqld]**  
 default_storage_engine=InnoDB  
@@ -45,14 +45,13 @@ wsrep_node_name='Node 1'
 wsrep_sst_method=rsync  
 wsrep_sst_auth=galerasync:secret
 
-## Start galera cluster   
-Bootstrap the first node, it's also required after a cluster restart with one of the nodes  
+## Start Galera Cluster   
+Der erste Galera Cluster Knoten muss wie folgt gestartet werden.   
 **/usr/bin/galera_new_cluster**  
   
-Now, you can start the other 2 nodes.  
+Starten der 2 weiteren Knoten   
 **systemctl start mysql**    
   
-## Support (NOT REQUIRED!)
+## Support 
 **BTC:** 3KC43T8Z1WG9zo6B671Yt5YhKgxbUwtGG2  
 **Paypal:** https://www.paypal.me/lindnerandre  
-**If you want to support me or just check the spelling :-P**
