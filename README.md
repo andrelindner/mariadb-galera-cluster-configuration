@@ -43,7 +43,7 @@ wsrep_cluster_name='Galera Cluster'
 wsrep_node_name='Node 1'  
 
 wsrep_sst_method=rsync  
-wsrep_sst_auth=galerasync:secret
+wsrep_sst_auth=galerasync:<PASSWORD>
 
 ## Start Galera Cluster   
 Der erste Galera Cluster Knoten muss wie folgt gestartet werden.   
