@@ -10,19 +10,19 @@
 ## Pakete installieren (Ubuntu)  
 - sudo apt-get update  
 - sudo apt-get install mariadb-server  
-- Im Normalfall bereits bei der Installation von mariadb-server enthalten "sudo apt-get install galera"
+- sudo apt-get install galera (Im Normalfall bereits bei der Installation von mariadb-server enthalten)
   
 ## MySQL/MariaDB Benutzer für sst-sync erstellen
 - Auf den einzelnen Knoten sind Benutzer für den Sync-Prozess anzulegen. Die IP-Adresse der jeweiligen Knoten muss in dem Codebeispiel angepasst werden.   
   
 - **Beispiel:**   
-  CREATE USER 'galerasync'@'192.168.1.1' IDENTIFIED BY '<passwort>';  
+  CREATE USER 'galerasync'@'192.168.1.1' IDENTIFIED BY 'passwort';  
   GRANT ALL PRIVILEGES ON *.* TO 'galerasync'@'192.168.1.1';  
-  CREATE USER 'galerasync'@'192.168.1.2' IDENTIFIED BY '<passwort>';  
+  CREATE USER 'galerasync'@'192.168.1.2' IDENTIFIED BY 'passwort';  
   GRANT ALL PRIVILEGES ON *.* TO 'galerasync'@'192.168.1.2';
-   CREATE USER 'galerasync'@'192.168.1.3' IDENTIFIED BY '<passwort>';  
+   CREATE USER 'galerasync'@'192.168.1.3' IDENTIFIED BY 'passwort';  
   GRANT ALL PRIVILEGES ON *.* TO 'galerasync'@'192.168.1.3';  
-  CREATE USER 'galerasync'@'localhost' IDENTIFIED BY '<passwort>';  
+  CREATE USER 'galerasync'@'localhost' IDENTIFIED BY 'passwort';  
   GRANT ALL PRIVILEGES ON *.* TO 'galerasync'@'localhost'; 
   
 ## my.cnf Basis Konfiguration   
@@ -45,7 +45,7 @@ wsrep_cluster_name='Galera Cluster'
 wsrep_node_name='<node_name>'  
 
 wsrep_sst_method=rsync  
-wsrep_sst_auth=galerasync:<PASSWORD>
+wsrep_sst_auth=galerasync:passwort
 
 ## Start Galera Cluster   
 Der erste Galera Cluster Knoten muss wie folgt gestartet werden.   
