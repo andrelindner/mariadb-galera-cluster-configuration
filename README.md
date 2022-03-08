@@ -40,7 +40,7 @@ wsrep_on=ON
 wsrep_provider=/usr/lib/galera/libgalera_smm.so  
 wsrep_cluster_address="gcomm://192.168.1.10,192.168.1.11,192.168.1.12"  
 wsrep_cluster_name='Galera Cluster'  
-wsrep_node_name='Node 1'  
+wsrep_node_name='<node_name>'  
 
 wsrep_sst_method=rsync  
 wsrep_sst_auth=galerasync:<PASSWORD>
