@@ -18,7 +18,6 @@ wsrep_cluster_name='Galera Cluster'
 # Choose a name for this node
 wsrep_node_name='Node 1'
 
-# rsync replication method
+# rsync replication method & credentials
 wsrep_sst_method=rsync
-# user credentials for the replication
-wsrep_sst_auth=galerasync:secret
+wsrep_sst_auth=galerasync:passwort
