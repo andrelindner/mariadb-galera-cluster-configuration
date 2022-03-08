@@ -7,3 +7,5 @@ CREATE USER 'galerasync'@'192.168.1.2' IDENTIFIED BY '<password>';
 GRANT ALL PRIVILEGES ON *.* TO 'galerasync'@'192.168.1.2';
 CREATE USER 'galerasync'@'192.168.1.3' IDENTIFIED BY '<password>';
 GRANT ALL PRIVILEGES ON *.* TO 'galerasync'@'192.168.1.3';
+CREATE USER 'galerasync'@'localhost' IDENTIFIED BY '<password>';
+GRANT ALL PRIVILEGES ON *.* TO 'galerasync'@'localhost';
