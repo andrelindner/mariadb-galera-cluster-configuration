@@ -16,12 +16,12 @@
 - Auf den einzelnen Knoten sind Benutzer für den Sync-Prozess anzulegen. Die IP-Adresse der jeweiligen Knoten muss in dem Codebeispiel angepasst werden.   
   
 - **Beispiel:**   
-  CREATE USER 'galerasync'@'192.168.1.10' IDENTIFIED BY '<PASSWORT>';  
-  GRANT ALL PRIVILIGES ON *.* TO 'galerasync'@'192.168.1.10';  
-  CREATE USER 'galerasync'@'192.168.1.11' IDENTIFIED BY '<PASSWORT>';  
-  GRANT ALL PRIVILIGES ON *.* TO 'galerasync'@'192.168.1.11';  
-  CREATE USER 'galerasync'@'localhost' IDENTIFIED BY '<PASSWORT>';  
-  GRANT ALL PRIVILIGES ON *.* TO 'galerasync'@'localhost'; 
+  CREATE USER 'galerasync'@'192.168.1.10' IDENTIFIED BY '<passwort>';  
+  GRANT ALL PRIVILEGES ON *.* TO 'galerasync'@'192.168.1.10';  
+  CREATE USER 'galerasync'@'192.168.1.11' IDENTIFIED BY '<passwort>';  
+  GRANT ALL PRIVILEGES ON *.* TO 'galerasync'@'192.168.1.11';  
+  CREATE USER 'galerasync'@'localhost' IDENTIFIED BY '<passwort>';  
+  GRANT ALL PRIVILEGES ON *.* TO 'galerasync'@'localhost'; 
   
 ## my.cnf Basis Konfiguration   
 - **InnoDB** ist Pflicht
