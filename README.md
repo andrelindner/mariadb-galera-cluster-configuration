@@ -16,10 +16,12 @@
 - Auf den einzelnen Knoten sind Benutzer für den Sync-Prozess anzulegen. Die IP-Adresse der jeweiligen Knoten muss in dem Codebeispiel angepasst werden.   
   
 - **Beispiel:**   
-  CREATE USER 'galerasync'@'192.168.1.10' IDENTIFIED BY '<passwort>';  
-  GRANT ALL PRIVILEGES ON *.* TO 'galerasync'@'192.168.1.10';  
-  CREATE USER 'galerasync'@'192.168.1.11' IDENTIFIED BY '<passwort>';  
-  GRANT ALL PRIVILEGES ON *.* TO 'galerasync'@'192.168.1.11';  
+  CREATE USER 'galerasync'@'192.168.1.1' IDENTIFIED BY '<passwort>';  
+  GRANT ALL PRIVILEGES ON *.* TO 'galerasync'@'192.168.1.1';  
+  CREATE USER 'galerasync'@'192.168.1.2' IDENTIFIED BY '<passwort>';  
+  GRANT ALL PRIVILEGES ON *.* TO 'galerasync'@'192.168.1.2';
+   CREATE USER 'galerasync'@'192.168.1.3' IDENTIFIED BY '<passwort>';  
+  GRANT ALL PRIVILEGES ON *.* TO 'galerasync'@'192.168.1.3';  
   CREATE USER 'galerasync'@'localhost' IDENTIFIED BY '<passwort>';  
   GRANT ALL PRIVILEGES ON *.* TO 'galerasync'@'localhost'; 
   
@@ -38,7 +40,7 @@ query_cache_type=0
   
 wsrep_on=ON  
 wsrep_provider=/usr/lib/galera/libgalera_smm.so  
-wsrep_cluster_address="gcomm://192.168.1.10,192.168.1.11,192.168.1.12"  
+wsrep_cluster_address="gcomm://192.168.1.1,192.168.1.2,192.168.1.3"  
 wsrep_cluster_name='Galera Cluster'  
 wsrep_node_name='<node_name>'  
 
