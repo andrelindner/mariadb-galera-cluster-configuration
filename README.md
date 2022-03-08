@@ -10,7 +10,7 @@
 ## Pakete installieren (Ubuntu)  
 - sudo apt-get update  
 - sudo apt-get install mariadb-server  
-- sudo apt-get install galera 
+- Im Normalfall bereits bei der Installation von mariadb-server enthalten "sudo apt-get install galera"
   
 ## MySQL/MariaDB Benutzer für sst-sync erstellen
 - Auf den einzelnen Knoten sind Benutzer für den Sync-Prozess anzulegen. Die IP-Adresse der jeweiligen Knoten muss in dem Codebeispiel angepasst werden.   
