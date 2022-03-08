@@ -1,5 +1,6 @@
-# Example for node 1 - localhost = socket
+# Example for node - localhost = socket
 # Please change the ip-addresses
+# https://dev.mysql.com/doc/refman/5.6/en/account-management-statements.html
 
 CREATE USER 'galerasync'@'192.168.1.1' IDENTIFIED BY '<password>';
 GRANT ALL PRIVILEGES ON *.* TO 'galerasync'@'192.168.1.1';
